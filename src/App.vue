@@ -2,7 +2,7 @@
     <v-app>
         <v-app-bar color="white" flat>
                 
-                <img class="ml-3" @click="go_home" :src="require('./assets/logo.png')" height="45" />
+                <img class="ml-10" @click="$router.push({path: '/'})" :src="require('./assets/logo.png')" height="45" />
 
                 <v-spacer />
      
@@ -24,40 +24,26 @@
                         </v-btn>
 
                 <v-spacer />
-
-            <v-btn text>여행지 추천</v-btn>
-            <v-btn text>공지사항</v-btn>
+            
+            <v-btn text @click="$router.push({path: '/recommend'})">여행지 추천</v-btn>
+            <v-btn text @click="$router.push({path: '/notification'})">공지사항</v-btn>
             
         </v-app-bar>
-            
-    <v-main>
-      <Home />
-    </v-main>
-        
 
+        <router-view />
+        
     </v-app>
 </template>
 
+
 <script>
 
-import Home from "./components/Home";
 
-  export default {
-    name: 'App',
+export default {
+  name: 'App',
 
-    components: {
-      Home,
-    },
-
-    data () {
-      return {
-        go_home(){
-          console.log('go home')
-        }
-      }
-    },
-    methods:{
-      
-    },
+  methods:{
+    
   }
+}
 </script>
