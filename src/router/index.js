@@ -29,4 +29,11 @@ const router = new Router({
     routes
 })
 
+const originalPush = Router.prototype.push;
+Router.prototype.push = function push(location) {
+	return originalPush.call(this, location).catch(err => {
+		if (err.name !== 'NavigationDuplicated') throw err;
+	});
+};
+
 export default router

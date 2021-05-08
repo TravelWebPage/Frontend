@@ -18,7 +18,7 @@
                         
                     </v-responsive>
                     <v-btn icon>
-                            <v-icon color="yellow darken-2">
+                            <v-icon color="#ffbb03">
                                 fa-search
                             </v-icon>
                         </v-btn>
@@ -30,7 +30,10 @@
             
         </v-app-bar>
 
-        <router-view />
+
+        <v-main>
+          <router-view />
+        </v-main>
         
     </v-app>
 </template>

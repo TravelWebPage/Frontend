@@ -1,49 +1,46 @@
 <template>
-  <v-hover>
-    <template v-slot:default="{ hover }">
-      <v-card
-        class="mx-auto"
-        max-width="344"
-      >
-        <v-img src="https://cdn.vuetifyjs.com/images/cards/forest-art.jpg"></v-img>
-
-        <v-card-text>
-          <h2 class="title primary--text">
-            Magento Forests
-          </h2>
-          Travel to the best outdoor experience on planet Earth. A vacation you will never forget!
-        </v-card-text>
-
-        <v-card-title>
-          <v-rating
-            :value="4"
-            dense
-            color="orange"
-            background-color="orange"
-            hover
-            class="mr-2"
-          ></v-rating>
-          <span class="primary--text subtitle-2">64 Reviews</span>
-        </v-card-title>
-
-        <v-fade-transition>
-          <v-overlay
-            v-if="hover"
-            absolute
-            color="#036358"
-          >
-            <v-btn>See more info</v-btn>
-          </v-overlay>
-        </v-fade-transition>
-      </v-card>
-    </template>
-  </v-hover>
+  <v-item-group active-class="#ffbb03">
+    <v-container>
+      <v-row>
+        <v-col
+          v-for="n in 24"
+          :key="n"
+          cols="12"
+          md="4"
+        >
+          <v-item v-slot="{ active, toggle }">
+            <v-card
+              class="d-flex align-center"
+              dark
+              height="300"
+              width="300"
+              @click="toggle"
+            >
+              <v-scroll-y-transition>
+                <div
+                  v-if="active"
+                  class="display-3 flex-grow-1 text-center"
+                >
+                  Active<br>
+                  <v-btn @click="method1">click</v-btn>
+                  
+                </div>
+              </v-scroll-y-transition>
+            </v-card>
+          </v-item>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-item-group>
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      overlay: false,
-    }),
+export default {
+  methods: {
+    method1: function(){
+      alert('clicked')
+    }
   }
+  
+}
 </script>

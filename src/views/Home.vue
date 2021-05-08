@@ -10,9 +10,12 @@
       :key="i"
       :src="slide"
       style="width: 70%; margin: auto;"
+      visibility: hidden
     >
     </v-carousel-item>
   </v-carousel>
+
+
 </template>
 
 
@@ -21,11 +24,11 @@
     data () {
       return {
         slides: [
-          require('@/assets/images/강원도.png'),
-          require('@/assets/images/경기도.png'),
-          require('@/assets/images/경상도.png'),
-          require('@/assets/images/전라도.png'),
-          require('@/assets/images/충청도.png'),
+          require('@/assets/images/광주.png'),
+          require('@/assets/images/나주.png'),
+          require('@/assets/images/전주.png'),
+          require('@/assets/images/담양.png'),
+          require('@/assets/images/영암.png'),
         ],
       }
     },
