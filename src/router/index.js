@@ -4,6 +4,7 @@ import Home from '@/views/Home'
 import Recommend from '@/views/Recommend'
 import Notification from '@/views/Notification'
 
+
 Vue.use(Router)
 
 const routes = [

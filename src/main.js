@@ -4,8 +4,10 @@ import vuetify from './plugins/vuetify'
 import Vuetify from 'vuetify'
 import router from './router'
 import '@fortawesome/fontawesome-free/css/all.css' // Ensure you are using css-loader
+import axios from 'axios'
 
 Vue.config.productionTip = false
+Vue.prototype.$axios = axios
 
 new Vue({
   vuetify,

@@ -1,5 +1,6 @@
 <template>
-  <v-carousel
+  <div>
+    <v-carousel
     cycle
     height="auto"
     hide-delimiter-background
@@ -15,7 +16,7 @@
     </v-carousel-item>
   </v-carousel>
 
-
+  </div>
 </template>
 
 
