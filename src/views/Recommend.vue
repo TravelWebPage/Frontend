@@ -3,18 +3,13 @@
     flat
     tile
   >
-
-    <v-container
-      v-for="type in types"
-      :key="type"
-      fluid
-    >
+  <v-container>
       <v-subheader>{{ type }}</v-subheader>
 
       <v-row>
         <v-spacer></v-spacer>
         <v-col
-          v-for="card in cards"
+          v-for="card in test.data.travel"
           :key="card"
           cols="12"
           sm="6"
@@ -22,12 +17,12 @@
         >
           <v-card>
             <v-img
-              :src="`https://picsum.photos/200/300?image=${getImage()}`"
+              :src="card.url"
               height="300px"
             >
               <span
                 class="headline white--text pl-4 pt-4 d-inline-block"
-                v-text="card"
+                v-text="card.where"
               ></span>
             </v-img>
 
@@ -54,12 +49,12 @@
                         color="#FFBD0C"
                         dark
                       >
-                        Opening from the top
+                        {{ card.where }}
                       </v-toolbar>
 
                       <v-card-text>
-                        <div class="text-h2 pa-12">
-                          Hello world!
+                        <div>
+                          {{ card.explain }}
                         </div>
                       </v-card-text>
 
@@ -104,6 +99,7 @@ import axios from 'axios';
           color: 'red lighten-3',
         },
       ],
+      test: "",
     }),
 
     methods: {
@@ -116,7 +112,7 @@ import axios from 'axios';
     },
      async created() {
     this.test = await axios.get("http://10.120.75.224:3000")
-    console.log(this.test)
+    console.log(this.test.data.travel)
   },
-  }
+}
 </script>
