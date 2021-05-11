@@ -77,7 +77,6 @@
                 </v-dialog>
               </v-col>
             </v-card-actions>
-
           </v-card>
         </v-col>
       </v-row>
@@ -86,6 +85,7 @@
 </template>
 
 <script>
+import axios from 'axios';
   export default {
     data: () => ({
       types: ['Places to Be', 'Places to See', 'Place to Feel', 'Place to Eat'],
@@ -114,5 +114,9 @@
         return Math.floor(Math.random() * (max - min + 1)) + min
       },
     },
+     async created() {
+    this.test = await axios.get("http://10.120.75.224:3000")
+    console.log(this.test)
+  },
   }
 </script>

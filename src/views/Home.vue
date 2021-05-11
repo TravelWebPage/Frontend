@@ -15,12 +15,13 @@
     >
     </v-carousel-item>
   </v-carousel>
-
+    
   </div>
 </template>
 
 
 <script>
+  import axios from 'axios';
   export default {
     data () {
       return {
@@ -32,6 +33,10 @@
           require('@/assets/images/영암.png'),
         ],
       }
+    },
+  async created() {
+      this.test = await axios.get("http://10.120.75.224:3000")
+      console.log(this.test)
     },
   }
 </script>
