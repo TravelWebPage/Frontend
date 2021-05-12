@@ -10,7 +10,8 @@
       v-for="(slide, i) in slides"
       :key="i"
       :src="slide"
-      style="width: 70%; margin: auto;"
+      @click="$router.push({path: regions[i]})"
+      style="width: 75%; margin: auto;"
       visibility: hidden
     >
     </v-carousel-item>
@@ -32,6 +33,7 @@
           require('@/assets/images/담양.png'),
           require('@/assets/images/영암.png'),
         ],
+        regions: ['/Damyang','/Gwangju','/Jeonju','/Naju','/Yeongam']
       }
     },
   async created() {
