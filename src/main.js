@@ -5,6 +5,7 @@ import Vuetify from 'vuetify'
 import router from './router'
 import '@fortawesome/fontawesome-free/css/all.css' // Ensure you are using css-loader
 import axios from 'axios'
+import './index.css'
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios

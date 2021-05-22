@@ -33,7 +33,7 @@
           require('@/assets/images/담양.png'),
           require('@/assets/images/영암.png'),
         ],
-        regions: ['/Damyang','/Gwangju','/Jeonju','/Naju','/Yeongam']
+        regions: ['/Gwangju','/Naju','/Jeonju','/Damyang','/Yeongam']
       }
     },
   async created() {
