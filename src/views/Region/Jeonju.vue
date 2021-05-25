@@ -1,35 +1,89 @@
 <template>
-    <v-container>
-      <v-row dense>
+  <v-container class="pa-4 text-center">
+    <v-row
+      class="fill-height"
+      align="center"
+      justify="center"
+    >
+      <template v-for="(item, i) in items">
         <v-col
-          v-for="card in cards"
-          :key="card.title"
-          :cols="card.flex"
+          :key="i"
+          cols="12"
+          md="20"
         >
-          <v-card>
-            <v-img
-              :src="card.src"
-              class="white--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="500px"
+          <v-hover v-slot="{ hover }">
+            <v-card
+              :elevation="hover ? 12 : 2"
+              :class="{ 'on-hover': hover }"
             >
-              <v-card-title v-text="card.title"></v-card-title>
-            </v-img>
-          </v-card>
+              <v-img
+                :src="item.img"
+                height="480px"
+              >
+                <v-card-title class="title white--text">
+                  <v-row
+                    class="fill-height flex-column"
+                    justify="space-between"
+                  >
+                    <p class="mt-4 subheading text-left">
+                      {{ item.title }}
+                    </p>
+
+                    <div>
+                      <p class="ma-0 body-1 font-weight-bold font-italic text-left">
+                        {{ item.text }}
+                      </p>
+                      <p class="caption font-weight-medium font-italic text-left">
+                        {{ item.subtext }}
+                      </p>
+                    </div>
+
+                  </v-row>
+                </v-card-title>
+              </v-img>
+            </v-card>
+          </v-hover>
         </v-col>
-      </v-row>
-    </v-container>
+      </template>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
   export default {
     data: () => ({
-      cards: [
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 12 },
-        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 12 },
-        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 12 },
+      items: [
+        {
+          title: 'New Releases',
+          text: `It's New Release Friday`,
+          subtext: 'Newly released songs. Updated daily.',
+          img: require('@/assets/images/Jeonju_img/전주시.png'),
+        },
+        {
+          title: 'Rock',
+          text: 'Greatest Rock Hits',
+          subtext: 'Lose yourself in rock tunes.',
+          img: require('@/assets/images/Jeonju_img/전주소개.png'),
+        },
+        {
+          title: 'Mellow Moods',
+          text: 'Ambient Bass',
+          subtext: 'Chill beats to mellow you out.',
+          img: require('@/assets/images/Jeonju_img/전주관광지.png'),
+        },
       ],
+      transparent: 'rgba(255, 255, 255, 0)',
     }),
   }
 </script>
+
+<style scoped>
+.v-card {
+  transition: opacity .4s ease-in-out;
+}
+
+.v-card:not(.on-hover) {
+  opacity: 0.6;
+ }
+
+</style>

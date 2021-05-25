@@ -27,11 +27,11 @@
     data () {
       return {
         slides: [
-          require('@/assets/images/광주.png'),
-          require('@/assets/images/나주.png'),
-          require('@/assets/images/전주.png'),
-          require('@/assets/images/담양.png'),
-          require('@/assets/images/영암.png'),
+          require('@/assets/images/Gwangju_img/광주.png'),
+          require('@/assets/images/Naju_img/나주.png'),
+          require('@/assets/images/Jeonju_img/전주.png'),
+          require('@/assets/images/Damyang_img/담양.png'),
+          require('@/assets/images/Yeongam_img/영암.png'),
         ],
         regions: ['/Gwangju','/Naju','/Jeonju','/Damyang','/Yeongam']
       }
