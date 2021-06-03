@@ -25,16 +25,25 @@
                     class="fill-height flex-column"
                     justify="space-between"
                   >
-                    <p class="mt-4 subheading text-left">
-                      {{ item.title }}
+                    <p class="character" v-if="i === 0"
+                    :elevation="hover ? 12 : 2"
+                    :class="{ 'on-hover': hover }"
+                    >
+                      {{ test.data.data[0].character }}
                     </p>
 
                     <div>
-                      <p class="ma-0 body-1 font-weight-bold font-italic text-left">
-                        {{ item.text }}
+                      <p class="context" v-if="i === 1"
+                    :elevation="hover ? 12 : 2"
+                    :class="{ 'on-hover': hover }"
+                    >
+                        {{ test.data.data[0].context }}
                       </p>
-                      <p class="caption font-weight-medium font-italic text-left">
-                        {{ item.subtext }}
+                     <p class="tour" v-if="i === 2"
+                    :elevation="hover ? 12 : 2"
+                    :class="{ 'on-hover': hover }"
+                    >
+                        {{ test.data.data[0].tour }}
                       </p>
                     </div>
 
@@ -50,30 +59,27 @@
 </template>
 
 <script>
+import axios from 'axios';
   export default {
     data: () => ({
       items: [
         {
-          title: 'New Releases',
-          text: `It's New Release Friday`,
-          subtext: 'Newly released songs. Updated daily.',
           img: require('@/assets/images/Gwangju_img/광주광역시.png'),
         },
         {
-          title: 'Rock',
-          text: 'Greatest Rock Hits',
-          subtext: 'Lose yourself in rock tunes.',
           img: require('@/assets/images/Gwangju_img/광주소개.png'),
         },
         {
-          title: 'Mellow Moods',
-          text: 'Ambient Bass',
-          subtext: 'Chill beats to mellow you out.',
           img: require('@/assets/images/Gwangju_img/광주관광지.png'),
         },
       ],
       transparent: 'rgba(255, 255, 255, 0)',
+      test: ''
     }),
+    async created() {
+      this.test = await axios.get("http://10.120.75.224:3000/postdata/region_explain")
+      console.log(this.test)
+    },
   }
 </script>
 
@@ -81,8 +87,54 @@
 .v-card {
   transition: opacity .4s ease-in-out;
 }
+.character {
+  transition: opacity .4s ease-in-out;
+  font-size: 40px;
+  padding-top: 200px;
+  color: #fff;
+  font-weight: bold;
+}
+.context {
+  transition: opacity .4s ease-in-out;
+  font-size: 30px;
+  padding-top: 200px;
+  color: #fff;
+  font-weight: bold;
+}
+.tour {
+  transition: opacity .4s ease-in-out;
+  font-size: 30px;
+  padding-top: 200px;
+  color: #fff;
+  font-weight: bold;
+}
 
 .v-card:not(.on-hover) {
+  opacity: 1;
+ }
+ .v-card {
   opacity: 0.6;
+ }
+ h1 {
+   text-align: center;
+   margin-top: 30%;
+ }
+.character:not(.on-hover) {
+  opacity: 0;
+ }
+ .character {
+  opacity: 1;
+ }
+ .context:not(.on-hover) {
+  opacity: 0;
+ }
+ .context {
+  opacity: 1;
+ }
+ .tour:not(.on-hover) {
+  opacity: 0;
+ }
+ .tour {
+  opacity: 1;
  }
 </style>

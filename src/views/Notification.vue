@@ -54,77 +54,8 @@ import axios from 'axios';
   export default {
     
     data: () => ({
-      items: [
-        {
-          event_img: 'https://cdn-images-1.medium.com/max/1024/1*9C9hLji68wV373tk8okLYA.jpeg',
-          event_content: 'TBI’s 5 Best: SF Mocktails to Finish Dry January Strong',
-          region: 'Travel',
+      region_name: [
 
-        },
-        {
-          event_img: 'https://cdn-images-1.medium.com/max/1024/1*BBNtYUieAqHoXKjiJ2mMjQ.png',
-          event_content: 'PWAs on iOS 12.2 beta: the good, the bad, and the “not sure yet if good”',
-          region: 'Technology',
-        },
-        {
-          event_immg: 'https://cdn-images-1.medium.com/max/1024/1*rTEtei1UEmNqbq6evRsExw.jpeg',
-          event_content: 'How to Get Media Mentions for Your Business',
-          region: 'Media',
-        },
-        {
-          event_img: 'https://cdn-images-1.medium.com/max/1024/1*FD2nkJewVeQnGf0ommQfrw.jpeg',
-          event_content: 'The Pitfalls Of Outsourcing Self-Awareness To Artificial Intelligence',
-          region: 'Technology',
-        },
-        {
-          event_img: 'https://cdn-images-1.medium.com/max/1024/1*eogFpsVgNzXQLCVgFzT_-A.jpeg',
-          event_content: 'Degrees of Freedom and Sudoko',
-          region: 'Travel',
-        },
-      ],
-      events: [
-        {
-          name: "경기"
-        },
-        {
-          name: "강원"
-        },
-        {
-          name: "경상"
-        },
-        {
-          name: "충청"
-        },
-        {
-          name: "전라"
-        },
-        {
-          name: "제주"
-        },
-        {
-          name: "서울"
-        },
-        {
-          name: "인천"
-        },
-        {
-          name: "부산"
-        },
-        {
-          name: "광주"
-        },
-        {
-          name: "대전"
-        },
-        {
-          name: "대구"
-        },
-        {
-          name: "울산"
-        },
-        {
-          name: "세종"
-        },
       ],
       test: "",
 
